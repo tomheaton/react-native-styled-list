@@ -1,13 +1,24 @@
-import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, View} from 'react-native';
+// import {StyledList} from "react-native-styled-list";
 
 const App = () => {
     return (
         <View style={styles.container}>
-            <StatusBar style="auto" />
             <Text>
                 react-native-styled-list
             </Text>
+
+            {/*<StyledList>
+                <Text>
+                    item 0
+                </Text>
+                <Text>
+                    item 1
+                </Text>
+                <Text>
+                    item 2
+                </Text>
+            </StyledList>*/}
         </View>
     );
 }
