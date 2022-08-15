@@ -1,0 +1,49 @@
+{
+  "name": "react-native-styled-list",
+  "version": "1.0.0",
+  "description": "a styled list for react native",
+  "main": "dist/module/index.js",
+  "react-native": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
+  "directories": {
+    "src": "src",
+    "dist": "dist"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomheaton/react-native-styled-list.git"
+  },
+  "keywords": [
+    "styled",
+    "list",
+    "list",
+    "bullet",
+    "points",
+    "numbered",
+    "list",
+    "bulleted",
+    "list"
+  ],
+  "author": {
+    "url": "https://tomheaton.dev",
+    "name": "Tom Heaton",
+    "email": "tom@tomheaton.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomheaton/react-native-styled-list/issues"
+  },
+  "homepage": "https://github.com/tomheaton/react-native-styled-list#readme",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-native": "^0.69.5",
+    "typescript": "^4.7.4"
+  }
+}
