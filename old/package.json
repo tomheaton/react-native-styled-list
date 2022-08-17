@@ -2,15 +2,17 @@
   "name": "react-native-styled-list",
   "version": "1.0.0",
   "description": "a styled list for react native",
-  "main": "dist/module/index.js",
-  "react-native": "dist/module/index.js",
-  "types": "dist/typescript/index.d.ts",
-  "directories": {
-    "src": "src",
-    "dist": "dist"
-  },
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "react-native": "src/index.ts",
+  "types": "lib/typescript/index.d.ts",
+  "files": [
+    "lib/",
+    "src/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "bob build"
   },
   "repository": {
     "type": "git",
@@ -46,5 +48,15 @@
     "@types/react-native": "^0.69.5",
     "react-native-builder-bob": "^0.18.3",
     "typescript": "^4.7.4"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      ["aar", {"reverseJetify": true}],
+      ["commonjs", {"copyFlow": true}],
+      "module",
+      "typescript",
+    ]
   }
 }
