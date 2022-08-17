@@ -10,12 +10,32 @@ npm install react-native-styled-list
 
 ## Usage
 
-```js
-import {multiply} from "react-native-styled-list";
+### `BulletedList`
+
+```tsx
+import { BulletedList } from "react-native-styled-list";
 
 // ...
 
-const result = await multiply(3, 7);
+<BulletedList>
+  <Text>item a</Text>
+  <Text>item b</Text>
+  <Text>item c</Text>
+</BulletedList>
+```
+
+### `NumberedList`
+
+```tsx
+import { NumberedList } from "react-native-styled-list";
+
+// ...
+
+<NumberedList>
+  <Text>item a</Text>
+  <Text>item b</Text>
+  <Text>item c</Text>
+</NumberedList>
 ```
 
 ## Contributing

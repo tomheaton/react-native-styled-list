@@ -109,7 +109,8 @@ The `package.json` file contains various scripts for common tasks:
 ### Sending a pull request
 
 > **Working on your first pull request?** You can learn how from this _free_
-> series: [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github)
+>
+series: [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github)
 > .
 
 When you're sending a pull request:

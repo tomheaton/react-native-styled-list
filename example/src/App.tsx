@@ -8,9 +8,9 @@ const App = () => {
       <Text>react-native-styled-list</Text>
 
       <BulletedList bulletStyle={'square'}>
-        <Text>item 0</Text>
-        <Text>item 1</Text>
-        <Text>item 2</Text>
+        <Text>item a</Text>
+        <Text>item b</Text>
+        <Text>item c</Text>
       </BulletedList>
 
       <NumberedList>

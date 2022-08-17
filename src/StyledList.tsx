@@ -19,12 +19,12 @@ type BulletedProps = {
 };
 
 export const BulletedList: React.FC<BulletedProps> = ({
-  children,
-  containerStyle,
-  childStyle,
-  bulletStyle = 'regular',
-  customBullet,
-}) => {
+                                                        children,
+                                                        containerStyle,
+                                                        childStyle,
+                                                        bulletStyle = 'regular',
+                                                        customBullet,
+                                                      }) => {
   const childrenArray = Children.toArray(children);
 
   return (
@@ -54,10 +54,10 @@ type NumberedProps = {
 };
 
 export const NumberedList: React.FC<NumberedProps> = ({
-  children,
-  containerStyle,
-  childStyle,
-}) => {
+                                                        children,
+                                                        containerStyle,
+                                                        childStyle,
+                                                      }) => {
   const childrenArray = Children.toArray(children);
 
   return (
