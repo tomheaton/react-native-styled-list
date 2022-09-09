@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { BulletedList, NumberedList } from 'react-native-styled-list';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>react-native-styled-list</Text>
