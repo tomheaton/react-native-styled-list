@@ -1,5 +1,13 @@
-import React, { Children, ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Children, type ReactNode } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
+
+type ViewStylePropType = StyleProp<ViewStyle> | undefined;
 
 const bulletStyles = {
   regular: '\u2022',
@@ -12,8 +20,8 @@ const bulletStyles = {
 
 type BulletedProps = {
   children: ReactNode;
-  containerStyle?: any;
-  childStyle?: any;
+  containerStyle?: ViewStylePropType;
+  childStyle?: ViewStylePropType;
   bulletStyle?: keyof typeof bulletStyles;
   customBullet?: ReactNode;
 };
@@ -49,8 +57,8 @@ export const BulletedList: React.FC<BulletedProps> = ({
 
 type NumberedProps = {
   children: ReactNode;
-  containerStyle?: any;
-  childStyle?: any;
+  containerStyle?: ViewStylePropType;
+  childStyle?: ViewStylePropType;
 };
 
 export const NumberedList: React.FC<NumberedProps> = ({

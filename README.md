@@ -1,11 +1,15 @@
 # react-native-styled-list
 
-a styled list for react native
+react native styled list
 
 ## Installation
 
 ```sh
+# npm
 npm install react-native-styled-list
+
+# yarn
+yarn add react-native-styled-list
 ```
 
 ## Usage
