@@ -2,6 +2,10 @@
 
 react native styled list
 
+<p align="center">
+  <img src="./preview.png" width="200">
+</p>
+
 ## Installation
 
 ```sh
@@ -16,30 +20,38 @@ yarn add react-native-styled-list
 
 ### `BulletedList`
 
-```tsx
+```jsx
 import { BulletedList } from "react-native-styled-list";
 
-// ...
-
-<BulletedList>
-  <Text>item a</Text>
-  <Text>item b</Text>
-  <Text>item c</Text>
-</BulletedList>
+export default function App() {
+  return (
+    <View>
+      <BulletedList>
+        <Text>apple</Text>
+        <Text>banana</Text>
+        <Text>orange</Text>
+      </BulletedList>
+    </View>
+  );
+}
 ```
 
 ### `NumberedList`
 
-```tsx
+```jsx
 import { NumberedList } from "react-native-styled-list";
 
-// ...
-
-<NumberedList>
-  <Text>item a</Text>
-  <Text>item b</Text>
-  <Text>item c</Text>
-</NumberedList>
+export default function App() {
+  return (
+    <View>
+      <NumberedList>
+        <Text>apple</Text>
+        <Text>banana</Text>
+        <Text>orange</Text>
+      </NumberedList>
+    </View>
+  );
+}
 ```
 
 ## Contributing
