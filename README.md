@@ -21,6 +21,8 @@ yarn add react-native-styled-list
 ### `BulletedList`
 
 ```jsx
+import React from "react";
+import { View, Text } from "react-native";
 import { BulletedList } from "react-native-styled-list";
 
 export default function App() {
@@ -39,6 +41,8 @@ export default function App() {
 ### `NumberedList`
 
 ```jsx
+import React from "react";
+import { View, Text } from "react-native";
 import { NumberedList } from "react-native-styled-list";
 
 export default function App() {
