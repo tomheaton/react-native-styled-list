@@ -4,12 +4,14 @@ import {
   Text,
   View,
   type StyleProp,
+  type TextStyle,
   type ViewStyle,
 } from 'react-native';
 
 type ViewStylePropType = StyleProp<ViewStyle> | undefined;
+type TextStylePropType = StyleProp<TextStyle> | undefined;
 
-const bulletStyles = {
+const bulletTypes = {
   regular: '\u2022',
   large: '\u25CF',
   hyphen: '\u2043',
@@ -22,16 +24,20 @@ type BulletedProps = {
   children: ReactNode;
   containerStyle?: ViewStylePropType;
   childStyle?: ViewStylePropType;
-  bulletStyle?: keyof typeof bulletStyles;
+  bulletStyle?: TextStylePropType;
+  bulletType?: keyof typeof bulletTypes;
   customBullet?: ReactNode;
+  customBulletStyle?: ViewStylePropType;
 };
 
 export const BulletedList: React.FC<BulletedProps> = ({
   children,
   containerStyle,
   childStyle,
-  bulletStyle = 'regular',
+  bulletStyle,
+  bulletType = 'regular',
   customBullet,
+  customBulletStyle,
 }) => {
   const childrenArray = Children.toArray(children);
 
@@ -41,13 +47,11 @@ export const BulletedList: React.FC<BulletedProps> = ({
         return (
           <View key={index} style={[styles.row]}>
             {customBullet ? (
-              <View style={[styles.customBulletContainer]}>{customBullet}</View>
+              <View style={customBulletStyle}>{customBullet}</View>
             ) : (
-              <Text style={[styles.bulletContainer]}>
-                {bulletStyles[bulletStyle]}
-              </Text>
+              <Text style={bulletStyle}>{bulletTypes[bulletType]}</Text>
             )}
-            <Text style={[styles.child, childStyle]}>{child}</Text>
+            <Text style={childStyle}>{child}</Text>
           </View>
         );
       })}
@@ -58,12 +62,14 @@ export const BulletedList: React.FC<BulletedProps> = ({
 type NumberedProps = {
   children: ReactNode;
   containerStyle?: ViewStylePropType;
+  numberStyle?: TextStylePropType;
   childStyle?: ViewStylePropType;
 };
 
 export const NumberedList: React.FC<NumberedProps> = ({
   children,
   containerStyle,
+  numberStyle,
   childStyle,
 }) => {
   const childrenArray = Children.toArray(children);
@@ -73,8 +79,8 @@ export const NumberedList: React.FC<NumberedProps> = ({
       {childrenArray.map((child, index) => {
         return (
           <View key={index} style={[styles.row]}>
-            <Text style={[styles.numberContainer]}>{index + 1}.</Text>
-            <Text style={[styles.child, childStyle]}>{child}</Text>
+            <Text style={numberStyle}>{index + 1}.</Text>
+            <Text style={childStyle}>{child}</Text>
           </View>
         );
       })}
@@ -85,31 +91,12 @@ export const NumberedList: React.FC<NumberedProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  child: {
-    color: 'black',
+    width: '100%',
   },
   row: {
     flexDirection: 'row',
-    // TODO: check this value
-    marginVertical: 2,
-  },
-  customBulletContainer: {
-    // TODO: check this value
-    marginRight: 4,
-  },
-  bulletContainer: {
-    // TODO: check these values
-    fontSize: 16,
-    marginRight: 4,
-  },
-  numberContainer: {
-    fontWeight: 'bold',
-    // TODO: check these values
-    fontSize: 16,
-    marginRight: 4,
+    marginVertical: 4,
+    columnGap: 8,
   },
 });
