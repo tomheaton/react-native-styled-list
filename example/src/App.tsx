@@ -26,14 +26,17 @@ export default function App() {
       <Text style={styles.title}>react-native-styled-list</Text>
       <Text style={styles.description}>These are lists of fruits.</Text>
 
-      <View style={styles.listContainer}>
-        <BulletedList bulletType={'square'}>
+      <View style={styles.listRow}>
+        <BulletedList style={styles.listContainer} bulletType={'square'}>
           {items.map((item, index) => (
             <Text key={index}>{item}</Text>
           ))}
         </BulletedList>
 
-        <NumberedList numberStyle={styles.numberStyle}>
+        <NumberedList
+          style={styles.listContainer}
+          numberStyle={styles.numberStyle}
+        >
           {items.map((item, index) => (
             <Text key={index}>{item}</Text>
           ))}
@@ -46,7 +49,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     paddingVertical: 48,
     paddingHorizontal: 24,
     backgroundColor: '#edf2f4',
@@ -63,11 +65,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 24,
   },
-  listContainer: {
+  listRow: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     width: '100%',
+  },
+  listContainer: {
+    flex: 1,
   },
   numberStyle: {
     fontWeight: 'bold',
